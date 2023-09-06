@@ -1,10 +1,53 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-gltf-exporter-component/dist/aframe-gltf-exporter-component.min.js"></script> 
+
+style>
+      html {
+        background: #33425B;
+        color: #FAFAFA;
+        font-family: monospace;
+        font-size: 20px;
+        padding: 10px 20px;
+      }
+      h1 {
+        font-weight: 300;
+      }
+      a {
+        color: #FAFAFA;
+        display: block;
+        padding: 15px 0;
+      }
+      img {
+        max-width: 320px;
+      }
+      ul {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        padding: 5px 0 0;
+      }
+      ul li {
+        margin-right: 30px;
+        padding: 5px 0 30px;
+      }
+      ul a {
+        background-size: cover;
+        display: block;
+        padding: 0;
+        height: 320px;
+        width: 320px;
+      }
+      ul h3,
+      ul p {
+        max-width: 320px;
+      }
+    </style>
     
-  </head>
+</head>
   <body>
-    <a-scene>
+    <a-scene gltf-exporter >
       <a-assets>
           <a-cubemap id="pisa">
         	<img src="https://threejs.org/examples/textures/cube/pisa/px.png">
@@ -44,13 +87,19 @@
       <!-- Probe light using the #pisa environment map -->
             <a-light type="hemisphere" intesity="2.0" position="0 5 0"></a-light> 
         <a-light type="spot" intesity="2.0" position="3 5 0"></a-light> 
-        <a-light type="spot" intesity="2.0" position="0 5 -3"></a-light> 
-      <a-box src="#material1" position="-1 0.5 -3" rotation="0 45 0"></a-box>
+        <a-light type="spot" intesity="2.0" position="0 5 -3"></a-light>
+
+      <a-entity id="glbexport" ></a-entity>
+      <a-box src="#material1" position="-1 0.5 -3" rotation="0 45 0" gltf-expoorter="" ></a-box>
       <a-sphere src="#material2" position="0 1.25 -5" radius="1.25" ></a-sphere>
       <a-cylinder src="#material2" position="1 0.75 -3" radius="0.5" height="1.5" ></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
+
+
+
+      
     </a-scene>
   </body>
 </html>
--->
+
