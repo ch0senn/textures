@@ -1,1 +1,56 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+          <a-cubemap id="pisa">
+        	<img src="https://threejs.org/examples/textures/cube/pisa/px.png">
+        	<img src="https://threejs.org/examples/textures/cube/pisa/nx.png">
+        	<img src="https://threejs.org/examples/textures/cube/pisa/py.png">
+        	<img src="https://threejs.org/examples/textures/cube/pisa/ny.png">
+        	<img src="https://threejs.org/examples/textures/cube/pisa/pz.png">
+        	<img src="https://threejs.org/examples/textures/cube/pisa/nz.png">
+        	</a-cubemap>
 
+
+
+
+          <a-assets-item id=""></a-assets-item>
+
+
+
+         <img id="material1" src="https://cdn.glitch.global/5590527c-db02-4ead-9489-6b958cb033f2/pine_bark_diff_4k.jpg?v=1693988897728">
+         <img id="material2" src="https://cdn.glitch.global/5590527c-db02-4ead-9489-6b958cb033f2/metalico.jpg?v=1693989490303">
+         <img id="material3" src="https://cdn.glitch.global/5590527c-db02-4ead-9489-6b958cb033f2/pine_bark_diff_4k.jpg?v=1693988897728">
+      </assets>
+
+
+
+
+      <!-- Red directional light shining from the top left. -->
+      <a-light color="red" position="-1 1 0"></a-light>
+      <a-light type="probe" envMap="#pisa"></a-light>
+        
+
+      <!-- Blue point light, 5 meters in the air. -->
+      <a-light type="point" color="blue" position="0 5 0"></a-light>
+      
+      <!-- Dim ambient lighting. -->
+      <a-light type="ambient" color="#222"></a-light>
+      
+      <!-- Probe light using the #pisa environment map -->
+            <a-light type="hemisphere" intesity="2.0" position="0 5 0"></a-light> 
+        <a-light type="spot" intesity="2.0" position="3 5 0"></a-light> 
+        <a-light type="spot" intesity="2.0" position="0 5 -3"></a-light> 
+      <a-box src="#material1" position="-1 0.5 -3" rotation="0 45 0"></a-box>
+      <a-sphere src="#material2" position="0 1.25 -5" radius="1.25" ></a-sphere>
+      <a-cylinder src="#material2" position="1 0.75 -3" radius="0.5" height="1.5" ></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
+-->
